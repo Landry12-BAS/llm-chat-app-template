@@ -1,3 +1,10 @@
+// === DOM refs (must be first — referenced by functions called during init) ===
+const chatMessages = document.getElementById("chat-messages");
+const typingWrapper = document.getElementById("typing-wrapper");
+const userInput = document.getElementById("user-input");
+const sendButton = document.getElementById("send-button");
+const scrollBottomBtn = document.getElementById("scroll-bottom-btn");
+
 // === Theme ===
 const html = document.documentElement;
 const themeToggle = document.getElementById("theme-toggle");
@@ -220,9 +227,6 @@ function createMessageEl(msg, ts) {
 }
 
 // === Render all messages ===
-const chatMessages = document.getElementById("chat-messages");
-const typingWrapper = document.getElementById("typing-wrapper");
-
 function renderAllMessages() {
 	chatMessages.innerHTML = "";
 
@@ -284,7 +288,6 @@ window.copyCode = function (btn) {
 };
 
 // === Scroll to bottom button ===
-const scrollBottomBtn = document.getElementById("scroll-bottom-btn");
 chatMessages.addEventListener("scroll", () => {
 	const nearBottom =
 		chatMessages.scrollHeight - chatMessages.scrollTop - chatMessages.clientHeight < 120;
@@ -295,8 +298,6 @@ scrollBottomBtn.addEventListener("click", () => {
 });
 
 // === Input ===
-const userInput = document.getElementById("user-input");
-const sendButton = document.getElementById("send-button");
 let isProcessing = false;
 
 userInput.addEventListener("input", function () {
