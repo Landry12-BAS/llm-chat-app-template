@@ -55,7 +55,7 @@ function generateId() {
 }
 
 const GREETING =
-	"Hello! I'm powered by Cloudflare Workers AI (Llama 3.1 8B). How can I help you today?";
+	"Hello! I'm SmartSupport AI. How can I help you today?";
 
 function createNewConversation() {
 	const id = generateId();
@@ -239,8 +239,8 @@ function renderAllMessages() {
 		empty.className = "empty-state";
 		empty.innerHTML = `
       <div class="empty-icon">⚡</div>
-      <h2>Cloudflare AI Chat</h2>
-      <p>Powered by Llama 3.1 8B via Cloudflare Workers AI. Ask me anything.</p>
+      <h2>SmartSupport AI</h2>
+      <p>Your AI-powered support assistant. Ask me anything.</p>
       <div class="chips">
         <div class="chip">Explain quantum computing</div>
         <div class="chip">Write a Python script</div>
